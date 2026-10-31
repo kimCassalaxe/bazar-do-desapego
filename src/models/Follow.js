@@ -18,8 +18,6 @@ const { DataTypes, Model } = require('sequelize');
     defaultValue: DataTypes.NOW,
     field: 'created_at'
   }
-
-  
 }, {sequelize,tableName: 'follows',timestamps: false  });
   return Follow;
 }

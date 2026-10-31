@@ -12,6 +12,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use('/api/auth', require('./src/routes/auth'));
 app.use('/api/products', require('./src/routes/products'));
 app.use('/api/category', require('./src/routes/category'));
+app.use('/api/follow', require('./src/routes/follow'));
 app.use('/api/social', require('./src/routes/social'));
 app.use('/api/chat', require('./src/routes/chat'));
 
@@ -24,10 +25,9 @@ app.get('/', (req,res)=>{
 
 app.get('/api/health', async (req,res)=>{
   try{
-    console.log("estamos aqui1");
+    console.log("cosseno de 90 graus");
     const pool = require('./src/config/db');
     const [rows] = await pool.query('SELECT COUNT(*) as total FROM users');
-    console.log("estamos");
     console.log(rows);
     res.json({ status:'ok', db:'MySQL conectado', total_users: rows[0].total });
   }catch(e){
