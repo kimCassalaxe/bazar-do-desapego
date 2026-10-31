@@ -1,0 +1,42 @@
+
+conversations:{  `conversation_id`, `product_id`, `updated_at`}
+follows:{`follower_id`, `followee_id`, `created_at`}
+categories:{`category_id`,`name`,`slug`,`icon`};
+comments:{`comment_id`,`user_id`,`product_id`,`comment_text`,`created_at`}
+Conversation_participants:{`conversation_id`,`user_id`}
+likes:{`user_id`,`product_id`,`created_at`}
+messages:{`message_id`,`conversation_id`,`sender_id`,`content`,`is_read`,`created_at`}
+notifications:{`notification_id`,`user_id`,`actor_id`,`type`,`content`,`related_id`,`is_read`,`created_at`}
+product_images:{`image_id`,`product_id`,`image_url`,`is_primary`,`position`}
+products:{`product_id`,`seller_id`,`category_id`,`title`,`description`,`price`,`old_price`,`condition`,`status`,`city`,`views_count`,`likes_count`,`comments_count`,`created_at`}
+users:{`user_id`,`username`,`email`,`password_hash`,`display_name`,`bio`,`avatar_url`,`city`,`whatsapp`,`followers_count`,`avg_rating`,`created_at`}
+
+
+/* 
+3. Agora que "User", "Category" e "Product" são modelos Sequelize legítimos,
+ os métodos de associação vão funcionar perfeitamente!
+
+ Um Usuário tem muitos Produtos (Vendedor -> Anúncios)
+User.hasMany(Product, { foreignKey: 'seller_id', as: 'products' });
+Product.belongsTo(User, { foreignKey: 'seller_id', as: 'seller' });
+Product.hasMany(ProductImage, { foreignKey: 'image_id', as: 'product_images' });
+Product.hasMany(Comment, { foreignKey: 'product_id', as: 'comments' });
+
+// Relacionamento do Comentário com o autor
+Comment.belongsTo(User, { foreignKey: 'userId', as: 'commentUser' });
+// Uma Categoria tem muitos Produtos
+Category.hasMany(Product, { foreignKey: 'category_id', as: 'products' });
+Product.belongsTo(Category, { foreignKey: 'category_id', as: 'category' });
+*/
+
+
+
+
+
+
+"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiYjFkNDQyNTItZTIyMi00YTRjLWE0OTctMzliNzc0YmJmNGY2IiwidXNlcm5hbWUiOiJtYXVyb19zaWx2YSIsImlhdCI6MTc5Mjc0MTM2OSwiZXhwIjoxNzkzMzQ2MTY5fQ.ASc0luHVFpnuUHzExxU4_-hyNGiGpSgUowlWU16gtqk"
+
+
+
+
+
